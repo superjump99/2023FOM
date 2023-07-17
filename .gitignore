@@ -1,2 +1,5 @@
 # ignore .idea file
 *.idea
+
+# ignore zip file
+*.zip
