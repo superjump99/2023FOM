@@ -3,3 +3,6 @@
 
 # ignore zip file
 *.zip
+
+# data ignore, large
+dataset
