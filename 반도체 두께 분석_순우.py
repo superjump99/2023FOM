@@ -47,7 +47,7 @@ test_X = test.iloc[:,1:]
 # In[11]:
 
 
-pca = PCA()
+pca = PCA(n_components=27)
 pca.fit(train_X)
 
 
@@ -74,9 +74,8 @@ pd.DataFrame(pca.explained_variance_ratio_).plot(kind='bar', figsize=(20,5))
 # In[15]:
 
 
-for i in range(227):
+for i in [10, 27, 50, 100, 120, 150, 226]:
     print(i, " : ", pca.explained_variance_ratio_[:i].sum())
-exit()
 
 
 # In[17]:
@@ -94,7 +93,7 @@ for i, n in enumerate(PCA_NUM):
     print(f"{i+1}번 모델")
     xData = train_score[:,:n]
     xTestData = test_score[:,:n]
-print(xData.shape)
+    print(xData.shape)
 
 # In[23]:
 
