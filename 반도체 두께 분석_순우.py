@@ -141,9 +141,10 @@ model_save.append(model)
 # In[ ]:
 
 
-sample_sub = pd.read_csv('sample_submission.csv', index_col=0)
-submission = sample_sub+model_save
-submission.to_csv('submission_sw.csv')
+sample_sub = pd.read_csv('dataset/sample_submission.csv', index_col=0)
+submission = sample_sub+pred_test
+submission.to_csv('submission_sw1.csv')
+# submission.to_csv('submission_sw.csv')
 
 
 # In[ ]:
