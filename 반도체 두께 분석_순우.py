@@ -128,7 +128,7 @@ history = model.fit(xData, train_Y, epochs=epochs, batch_size=batch_size, valida
 # In[ ]:
 
 
-pred_test = model.predict(test_X)
+pred_test = model.predict(xTestData)
 
 
 # In[ ]:
