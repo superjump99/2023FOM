@@ -24,7 +24,7 @@ test_X = test.iloc[:,1:]
 
 
 # PCA 진행
-pca = PCA(n_components=27)
+pca = PCA(n_components=13)
 pca.fit(train_X)
 
 pca_train_X = pca.transform(train_X)
@@ -45,6 +45,10 @@ def createmodel():
     model.add(Dropout(0.2))
     model.add(Dense(units=200, activation='relu'))
     model.add(Dropout(0.2))
+    model.add(Dense(units=100, activation='relu'))
+    model.add(Dropout(0.2))
+    model.add(Dense(units=50, activation='relu'))
+    model.add(Dropout(0.2))
     model.add(Dense(units=4, activation='linear'))
 
     model.compile(loss='mae', optimizer='adam', metrics=['mae'])
@@ -58,8 +62,8 @@ import gc
 
 pred_list = []
 
-epochs = 300
-batch_size = 4000
+epochs = 10
+batch_size = 500
 for train_index, valid_index in kf.split(pca_train_X):
     X_train, X_valid = pca_train_X.iloc[train_index], pca_train_X.iloc[valid_index]
     y_train, y_valid = train_Y.iloc[train_index], train_Y.iloc[valid_index]
