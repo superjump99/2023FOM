@@ -65,7 +65,6 @@ plt.xlabel("Number of PCA")
 plt.ylabel("Cumulative Explained Variance")
 plt.show()
 
-exit()
 for i in range(227):
     print(i, " : ", pca.explained_variance_ratio_[:i].sum())
 '''
