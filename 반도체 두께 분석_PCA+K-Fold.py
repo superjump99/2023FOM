@@ -37,7 +37,7 @@ pca_test_X = pd.DataFrame(pca_test_X)
 # K-fold를 위한 모델함수 생성
 def createmodel():
     model = Sequential()
-    model.add(Dense(units=1000, activation='relu', input_dim=27))
+    model.add(Dense(units=1000, activation='relu', input_dim=13))
     model.add(Dropout(0.2))
     model.add(Dense(units=700, activation='relu'))
     model.add(Dropout(0.2))
